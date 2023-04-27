@@ -104,27 +104,15 @@ const useChartOptions = () => {
   };
 };
 
-export const OverviewSales = (props) => {
+export const Overviewtemphistory = (props) => {
   const { chartSeries, sx } = props;
   const chartOptions = useChartOptions();
 
   return (
     <Card sx={sx}>
       <CardHeader
-        action={(
-          <Button
-            color="inherit"
-            size="small"
-            startIcon={(
-              <SvgIcon fontSize="small">
-                <ArrowPathIcon />
-              </SvgIcon>
-            )}
-          >
-            Sync
-          </Button>
-        )}
-        title="Sales"
+    
+        title="History"
       />
       <CardContent>
         <Chart
@@ -136,24 +124,12 @@ export const OverviewSales = (props) => {
         />
       </CardContent>
       <Divider />
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <Button
-          color="inherit"
-          endIcon={(
-            <SvgIcon fontSize="small">
-              <ArrowRightIcon />
-            </SvgIcon>
-          )}
-          size="small"
-        >
-          Overview
-        </Button>
-      </CardActions>
+      
     </Card>
   );
 };
 
-OverviewSales.protoTypes = {
+Overviewtemphistory.protoTypes = {
   chartSeries: PropTypes.array.isRequired,
   sx: PropTypes.object
 };

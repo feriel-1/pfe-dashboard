@@ -1,104 +1,136 @@
-import { format } from 'date-fns';
 import PropTypes from 'prop-types';
-import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
+//import ArrowPathIcon from '@heroicons/react/24/solid/ArrowPathIcon';
+//import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
 import {
-  Box,
   Button,
   Card,
   CardActions,
+  Box,
+  CardContent,
   CardHeader,
   Divider,
-  SvgIcon,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow
+  SvgIcon
 } from '@mui/material';
-import { Scrollbar } from 'src/components/scrollbar';
-import { SeverityPill } from 'src/components/severity-pill';
+import { alpha, useTheme } from '@mui/material/styles';
+import { Chart } from 'src/components/chart';
 
-const statusMap = {
-  pending: 'warning',
-  delivered: 'success',
-  refunded: 'error'
+const useChartOptions = () => {
+  const theme = useTheme();
+
+  return {
+    chart: {
+      background: 'transparent',
+      stacked: false,
+      toolbar: {
+        show: false
+      }
+    },
+    colors: [theme.palette.primary.main, alpha(theme.palette.primary.main, 0.25)],
+    dataLabels: {
+      enabled: false
+    },
+    fill: {
+      opacity: 1,
+      type: 'solid'
+    },
+    grid: {
+      borderColor: theme.palette.divider,
+      strokeDashArray: 2,
+      xaxis: {
+        lines: {
+          show: false
+        }
+      },
+      yaxis: {
+        lines: {
+          show: true
+        }
+      }
+    },
+    legend: {
+      show: false
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '40px'
+      }
+    },
+    stroke: {
+      colors: ['transparent'],
+      show: true,
+      width: 2
+    },
+    theme: {
+      mode: theme.palette.mode
+    },
+    xaxis: {
+      axisBorder: {
+        color: theme.palette.divider,
+        show: true
+      },
+      axisTicks: {
+        color: theme.palette.divider,
+        show: true
+      },
+      categories: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ],
+      labels: {
+        offsetY: 5,
+        style: {
+          colors: theme.palette.text.secondary
+        }
+      }
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => (value > 0 ? `${value}K` : `${value}`),
+        offsetX: -10,
+        style: {
+          colors: theme.palette.text.secondary
+        }
+      }
+    }
+  };
 };
 
-export const OverviewLatestOrders = (props) => {
-  const { orders = [], sx } = props;
+export const OverviewGazhistory = (props) => {
+  const { chartSeries, sx } = props;
+  const chartOptions = useChartOptions();
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Orders" />
-      <Scrollbar sx={{ flexGrow: 1 }}>
-        <Box sx={{ minWidth: 800 }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  Order
-                </TableCell>
-                <TableCell>
-                  Customer
-                </TableCell>
-                <TableCell sortDirection="desc">
-                  Date
-                </TableCell>
-                <TableCell>
-                  Status
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {orders.map((order) => {
-                const createdAt = format(order.createdAt, 'dd/MM/yyyy');
-
-                return (
-                  <TableRow
-                    hover
-                    key={order.id}
-                  >
-                    <TableCell>
-                      {order.ref}
-                    </TableCell>
-                    <TableCell>
-                      {order.customer.name}
-                    </TableCell>
-                    <TableCell>
-                      {createdAt}
-                    </TableCell>
-                    <TableCell>
-                      <SeverityPill color={statusMap[order.status]}>
-                        {order.status}
-                      </SeverityPill>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </Box>
-      </Scrollbar>
+      <CardHeader
+    
+        title="Gaz History"
+      />
+      <CardContent>
+        <Chart
+          height={350}
+          options={chartOptions}
+          series={chartSeries}
+          type="bar"
+          width="100%"
+        />
+      </CardContent>
       <Divider />
-      <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <Button
-          color="inherit"
-          endIcon={(
-            <SvgIcon fontSize="small">
-              <ArrowRightIcon />
-            </SvgIcon>
-          )}
-          size="small"
-          variant="text"
-        >
-          View all
-        </Button>
-      </CardActions>
+      
     </Card>
   );
 };
 
-OverviewLatestOrders.prototype = {
-  orders: PropTypes.array,
+OverviewGazhistory.protoTypes = {
+  chartSeries: PropTypes.array.isRequired,
   sx: PropTypes.object
 };
