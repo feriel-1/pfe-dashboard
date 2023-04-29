@@ -42,7 +42,7 @@ const Page = () => (
               difference={12}
               positive
               sx={{ height: '100%' }}
-              value="$24k"
+              value="24°C"
             />
           </Grid>
           <Grid
@@ -54,7 +54,7 @@ const Page = () => (
               difference={16}
               positive={false}
               sx={{ height: '100%' }}
-              value="1.6k"
+              value="1.6%"
             />
           </Grid>
           <Grid
@@ -74,7 +74,7 @@ const Page = () => (
           >
             < OverviewSound
               sx={{ height: '100%' }}
-              value="$15k"
+              value="15%"
             />
           </Grid>
           <Grid
@@ -84,11 +84,11 @@ const Page = () => (
             <Overviewtemphistory
               chartSeries={[
                 {
-                  name: 'This year',
+                  name: 'This week',
                   data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
                 },
                 {
-                  name: 'Last year',
+                  name: 'Last week',
                   data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
                 }
               ]}
@@ -111,11 +111,11 @@ const Page = () => (
             <OverviewGazhistory
                   chartSeries={[
                     {
-                      name: 'This year',
+                      name: 'This week',
                       data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
                     },
                     {
-                      name: 'Last year',
+                      name: 'Last week',
                       data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
                     }
                   ]}
