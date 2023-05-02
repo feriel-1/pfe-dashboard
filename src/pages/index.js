@@ -2,14 +2,16 @@ import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, Unstable_Grid2 as Grid } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { OverviewTemperature } from 'src/sections/overview/overview-budget';
-import { OverviewGazhistory } from 'src/sections/overview/overview-latest-orders';
+import { OverviewTemperature } from 'src/sections/overview/overview-temperature';
+import { OverviewGazhistory } from 'src/sections/overview/overview-gaz-history';
 import { OverviewLatestProducts } from 'src/sections/overview/overview-latest-products';
 import { Overviewtemphistory } from 'src/sections/overview/Overview-temphistory';
-import { OverviewGaz } from 'src/sections/overview/overview-tasks-progress';
-import { OverviewHumidity } from 'src/sections/overview/overview-total-customers';
-import {  OverviewSound } from 'src/sections/overview/overview-total-profit';
+import { OverviewGaz } from 'src/sections/overview/overview-gaz';
+import { OverviewHumidity } from 'src/sections/overview/overview-humidity';
+import {  OverviewSound } from 'src/sections/overview/overview-sound';
 import { maxWidth, width } from '@mui/system';
+import {AreaChartComponent} from 'src/components/GazHistory';
+import {TempHumidityHistory} from 'src/components/TempHumidityHistory';
 /*import { OverviewTraffic } from 'src/sections/overview/overview-traffic';*/
 
 const now = new Date();
@@ -81,19 +83,7 @@ const Page = () => (
             xs={12}
             lg={8}
           >
-            <Overviewtemphistory
-              chartSeries={[
-                {
-                  name: 'This week',
-                  data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
-                },
-                {
-                  name: 'Last week',
-                  data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
-                }
-              ]}
-              sx={{ height: '100%' }}
-            />
+          <TempHumidityHistory />
           </Grid>
           <Grid
             xs={12}
@@ -108,19 +98,7 @@ const Page = () => (
             md={12}
             lg={8}
           >
-            <OverviewGazhistory
-                  chartSeries={[
-                    {
-                      name: 'This week',
-                      data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
-                    },
-                    {
-                      name: 'Last week',
-                      data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
-                    }
-                  ]}
-                  sx={{ height: '100%' }}
-            />
+            <AreaChartComponent  />
           </Grid>
         </Grid>
       </Container>

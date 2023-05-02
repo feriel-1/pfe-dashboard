@@ -11,7 +11,7 @@ import {
 
 const user = {
 
-  name: 'Mouhamed aouichaoui',
+  name: 'Mohamed aouichaoui',
  
 };
 
