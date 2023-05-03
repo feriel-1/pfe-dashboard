@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
+import {AiTwotoneSound} from 'react-icons/ai'
+
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
 export const OverviewSound = (props) => {
@@ -27,13 +29,13 @@ export const OverviewSound = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'primary.main',
+              backgroundColor: 'blue',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <CurrencyDollarIcon />
+              <AiTwotoneSound />
             </SvgIcon>
           </Avatar>
         </Stack>

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
+import {WiHumidity} from 'react-icons/wi'
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
 export const OverviewHumidity = (props) => {
@@ -29,13 +30,13 @@ export const OverviewHumidity = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'success.main',
+              backgroundColor: 'blue',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <UsersIcon />
+              <WiHumidity />
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -68,7 +69,7 @@ export const OverviewHumidity = (props) => {
               color="text.secondary"
               variant="caption"
             >
-              Since last month
+              Since yesterday
             </Typography>
           </Stack>
         )}

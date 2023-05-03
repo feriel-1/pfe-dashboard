@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ListBulletIcon from '@heroicons/react/24/solid/ListBulletIcon';
+
 import {
   Avatar,
   Box,
@@ -10,6 +10,8 @@ import {
   SvgIcon,
   Typography
 } from '@mui/material';
+
+import {GiGasStove} from 'react-icons/gi'
 
 export const OverviewGaz = (props) => {
   const { value, sx } = props;
@@ -37,13 +39,13 @@ export const OverviewGaz = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'warning.main',
+              backgroundColor: 'blue',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <ListBulletIcon />
+              <GiGasStove />
             </SvgIcon>
           </Avatar>
         </Stack>

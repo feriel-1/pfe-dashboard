@@ -1,40 +1,40 @@
 import { Card, Title, LineChart } from "@tremor/react";
 
 const chartdata = [
-  {
-    year: 1951,
-    "Population growth rate": 1.74,
-  },
-  {
-    year: 1952,
-    "Population growth rate": 1.93,
-  },
-  {
-    year: 1953,
-    "Population growth rate": 1.9,
-  },
-  {
-    year: 1954,
-    "Population growth rate": 1.98,
-  },
-  {
-    year: 1955,
-    "Population growth rate": 2,
-  },
+    {
+        date: 21.04,
+        "Humidity": 1.74,
+      },
+      {
+        date: 22.04,
+        "Humidity": 1.93,
+      },
+      {
+         date: 23.04,
+        "Humidity": 1.9,
+      },
+      {
+        date: 24.04,
+        "Humidity": 1.98,
+      },
+      {
+       date:25.04,
+        "Humidity": 2,
+      },
 ];
 
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
 
-export const AreaChartComponent = () => (
+export const HumidityHistory = () => (
   <Card>
-    <Title>Gaz History </Title>
+    <Title> Humidity History </Title>
     <LineChart
       className="mt-6"
       data={chartdata}
-      index="year"
-      categories={["Gaz"]}
-      colors={["blue"]}
+      index="date"
+      categories={["Humidity"]}
+      colors={["gray"]}
       valueFormatter={dataFormatter}
       yAxisWidth={40}
     />

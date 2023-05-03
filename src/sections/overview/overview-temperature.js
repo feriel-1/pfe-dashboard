@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 //import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 //import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 //import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
-import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import { DeviceThermostatIcon, Card, CardContent, Stack, SvgIcon, Typography,Avatar } from '@mui/material';
+import { CiTempHigh } from 'react-icons/ci'
+
 
 export const OverviewTemperature = (props) => {
   const { difference, positive = false, sx, value } = props;
@@ -26,16 +28,19 @@ export const OverviewTemperature = (props) => {
             <Typography variant="h4">
               {value}
             </Typography>
+            
           </Stack>
           <Avatar
-            sx={{
-              backgroundColor: 'error.main',
-              height: 56,
-              width: 56
-            }}
-          >
-          
-          </Avatar>
+              sx={{
+                backgroundColor: 'blue',
+                height: 56,
+                width: 56
+              }}
+            >
+              <SvgIcon>
+                <CiTempHigh />
+              </SvgIcon>
+            </Avatar>
         </Stack>
         {difference && (
           <Stack
@@ -49,7 +54,7 @@ export const OverviewTemperature = (props) => {
               direction="row"
               spacing={0.5}
             >
-             
+
               <Typography
                 color={positive ? 'success.main' : 'error.main'}
                 variant="body2"
@@ -63,6 +68,7 @@ export const OverviewTemperature = (props) => {
             >
               Since yesterday
             </Typography>
+           
           </Stack>
         )}
       </CardContent>
