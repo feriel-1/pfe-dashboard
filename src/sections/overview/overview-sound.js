@@ -29,7 +29,7 @@ export const OverviewSound = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'blue',
+              backgroundColor: '#3366ff',
               height: 56,
               width: 56
             }}

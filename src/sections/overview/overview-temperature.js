@@ -32,7 +32,7 @@ export const OverviewTemperature = (props) => {
           </Stack>
           <Avatar
               sx={{
-                backgroundColor: 'blue',
+                backgroundColor: '#002699',
                 height: 56,
                 width: 56
               }}

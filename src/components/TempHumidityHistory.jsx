@@ -34,7 +34,7 @@ export const TempHumidityHistory = () => (
       data={chartdata}
       index="date"
       categories={["Temperature"]}
-      colors={["blue"]}
+      colors={['blue']}
       valueFormatter={dataFormatter}
       yAxisWidth={40}
     />

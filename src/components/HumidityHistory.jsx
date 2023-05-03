@@ -34,7 +34,7 @@ export const HumidityHistory = () => (
       data={chartdata}
       index="date"
       categories={["Humidity"]}
-      colors={["gray"]}
+      colors={["blue"]}
       valueFormatter={dataFormatter}
       yAxisWidth={40}
     />

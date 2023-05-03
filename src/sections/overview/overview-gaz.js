@@ -39,7 +39,7 @@ export const OverviewGaz = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'blue',
+              backgroundColor: '#0039e6',
               height: 56,
               width: 56
             }}

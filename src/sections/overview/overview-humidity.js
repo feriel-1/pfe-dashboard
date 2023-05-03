@@ -30,7 +30,7 @@ export const OverviewHumidity = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'blue',
+              backgroundColor: '#0033cc',
               height: 56,
               width: 56
             }}
