@@ -9,15 +9,15 @@ import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
 
 export const items = [
- // {
-  //  title: 'Server Room',
-    //path: '/customers',
-   // icon: (
-     // <SvgIcon fontSize="small">
-   //     <UsersIcon />
- //     </SvgIcon>
- //   )
- // },
+ {
+    title: 'Server Room',
+    path: '/customers',
+    icon: (
+     <SvgIcon fontSize="small">
+        <UsersIcon />
+      </SvgIcon>
+    )
+  },
   {
     title: 'Dashboard',
     path: '/',
