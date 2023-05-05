@@ -52,6 +52,3 @@ export const CustomersTable = (props) => {
 
 };
 
-CustomersTable.propTypes = {
- 
-};

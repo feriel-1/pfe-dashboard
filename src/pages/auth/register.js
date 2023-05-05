@@ -3,9 +3,10 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Box, Button, Link, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, color ,Link, Stack, TextField, Typography } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+import { error } from 'console';
 
 const Page = () => {
   const router = useRouter();
@@ -144,6 +145,7 @@ const Page = () => {
                 sx={{ mt: 3 }}
                 type="submit"
                 variant="contained"
+                color='error'
               >
                 Continue
               </Button>
