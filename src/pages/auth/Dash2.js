@@ -1,19 +1,20 @@
 import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
-import { Box, Container, Typography} from '@mui/material';
+import { Box, Container, } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { OverviewTemperature } from 'src/sections/overview/overview-temperature';
+import { Temperature } from 'src/components/ServerRoom2/Temp';
 
-import { OverviewGaz } from 'src/sections/overview/overview-gaz';
-import { OverviewHumidity } from 'src/sections/overview/overview-humidity';
-import { OverviewSound } from 'src/sections/overview/overview-sound';
+import { Gaz } from 'src/components/ServerRoom2/Gaz';
+import { Humidity } from 'src/components/ServerRoom2/Humidity';
+import { Sound } from 'src/components/ServerRoom2/Sound';
 import { maxWidth, width } from '@mui/system';
-import { SoundHistory } from 'src/components/ServerRoom1/SoundHistory';
-import { HumidityHistory } from 'src/components/ServerRoom1/HumidityHistory';
-import { GazHistory } from 'src/components/ServerRoom1/GazHistory';
-import { TempHumidityHistory } from 'src/components/ServerRoom1/TempHumidityHistory';
+import { SoundHistory2 } from 'src/components/ServerRoom2/SoundHistory2';
+import { HumidityHistory2 } from 'src/components/ServerRoom2/HumidityHistory2';
+import { GazHistory2 } from 'src/components/ServerRoom2/GazHistory2';
+import { TempHumidityHistory2 } from 'src/components/ServerRoom2/TempHistory2';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
+import {Typography} from '@mui/material';
 
 const now = new Date();
 
@@ -31,43 +32,43 @@ const Page = () => (
         py: 8
       }}
     >
-       <Typography variant="h3">
-              <center> Dashboard of LTN1 </center> 
+      <Typography variant="h3">
+              <center> Dashboard of LTN2  </center> 
               </Typography>
       <Container maxWidth="xl">
         <Grid numColsMd={2} numColsLg={4} className="gap-6 my-8">
 
-          <OverviewTemperature
+          <Temperature
             difference={12}
             positive
             sx={{ height: '100%' }}
             value="24°C"
           />
 
-          <OverviewHumidity
+          <Humidity
             difference={16}
             positive={false}
             sx={{ height: '100%' }}
             value="1.6%"
           />
 
-          <OverviewGaz
+          <Gaz
             sx={{ height: '100%' }}
             value={75.5}
           />
 
-          < OverviewSound
+          < Sound
             sx={{ height: '100%' }}
             value="15%"
           />
         </Grid>
         <Grid numColsMd={2} numColsLg={2} className="gap-6 my-8">
-          <TempHumidityHistory />
-          <HumidityHistory />
+          <TempHumidityHistory2 />
+          <HumidityHistory2 />
         </Grid>
         <Grid numColsMd={2} numColsLg={2} className="gap-6 my-8">
-          <GazHistory />
-          <SoundHistory />
+          <GazHistory2 />
+          <SoundHistory2 />
         </Grid>
 
 
@@ -75,7 +76,6 @@ const Page = () => (
     </Box>
   </>
 );
-
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}

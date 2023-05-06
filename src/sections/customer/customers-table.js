@@ -1,22 +1,20 @@
 import PropTypes from 'prop-types';
 import { Card, Title, Text, Grid,Metric, Flex } from "@tremor/react";
 import { Button } from "@tremor/react";
+import { useRouter } from 'next/router';
 
-export const CustomersTable = (props) => {
-
- 
-
+export const ServerRoom = (props) => {
+  const router = useRouter()
 
   return (
     
     <main>
-    <Title>Dashboard</Title>
     <Grid numColsMd={2} className="mt-2 gap-6">
       <Card  >
       <Flex alignItems="center" justifyContent="evenly" >
         <Metric>Dashboard of LTN 1</Metric>
        
-        <Button size="xl" onClick={() => console.log("clicked")}>
+        <Button size="xl" onClick={() => router.push('/')}>
          Server room 1
         </Button>
         </Flex>
@@ -24,7 +22,7 @@ export const CustomersTable = (props) => {
       <Card>
       <Flex alignItems="center" justifyContent="evenly" >
         <Metric>Dashboard of LTN 2</Metric>
-        <Button size="xl" onClick={() => console.log("clicked")}>
+        <Button size="xl" onClick={() => router.push('/Dash2')}>
         Server room 2
     </Button>
     </Flex>

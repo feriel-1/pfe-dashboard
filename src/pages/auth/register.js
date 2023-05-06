@@ -3,10 +3,9 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Box, Button, color ,Link, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, color,Link, Stack, TextField, Typography } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
-import { error } from 'console';
 
 const Page = () => {
   const router = useRouter();
@@ -133,7 +132,7 @@ const Page = () => {
               {formik.errors.submit && (
                 <Typography
                   color="error"
-                  sx={{ mt: 3 }}
+                  sx={{ mt: 3 , backgroundColor:"blue"  }}
                   variant="body2"
                 >
                   {formik.errors.submit}
@@ -142,10 +141,9 @@ const Page = () => {
               <Button
                 fullWidth
                 size="large"
-                sx={{ mt: 3 }}
+                sx={{ mt: 3, backgroundColor:"blue" }}
                 type="submit"
                 variant="contained"
-                color='error'
               >
                 Continue
               </Button>
