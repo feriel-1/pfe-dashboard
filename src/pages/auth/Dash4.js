@@ -11,7 +11,7 @@ import { maxWidth, width } from '@mui/system';
 import { SoundHistory4} from 'src/components/ServerRoom4/SoundHistory4';
 import { HumidityHistory4 } from 'src/components/ServerRoom4/HumidityHistory4';
 import { GazHistory4 } from 'src/components/ServerRoom4/GazHistory4';
-import { TempHistory4 } from 'src/components/ServerRoom4/TempHistory4';
+import { TempHistory4 } from 'src/components/ServerRoom4/TemperatureHistory4';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
