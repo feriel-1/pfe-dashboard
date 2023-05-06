@@ -2,16 +2,16 @@ import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { Temperature } from 'src/components/ServerRoom2/Temp';
+import { Temperature4 } from 'src/components/ServerRoom2/Temperature4';
 
-import { Gaz } from 'src/components/ServerRoom2/Gaz';
-import { Humidity } from 'src/components/ServerRoom2/Humidity';
-import { Sound } from 'src/components/ServerRoom2/Sound';
+import { Gaz4 } from 'src/components/ServerRoom4/Gaz4';
+import { Humidity4 } from 'src/components/ServerRoom4/Humidity4';
+import { Sound4 } from 'src/components/ServerRoom4/Sound4';
 import { maxWidth, width } from '@mui/system';
-import { SoundHistory2 } from 'src/components/ServerRoom2/SoundHistory2';
-import { HumidityHistory2 } from 'src/components/ServerRoom2/HumidityHistory2';
-import { GazHistory2 } from 'src/components/ServerRoom2/GazHistory2';
-import { TempHistory2 } from 'src/components/ServerRoom2/TempHistory2';
+import { SoundHistory4} from 'src/components/ServerRoom4/SoundHistory4';
+import { HumidityHistory4 } from 'src/components/ServerRoom4/HumidityHistory4';
+import { GazHistory4 } from 'src/components/ServerRoom4/GazHistory4';
+import { TempHistory4 } from 'src/components/ServerRoom4/TempHistory4';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
@@ -33,42 +33,42 @@ const Page = () => (
       }}
     >
       <Typography variant="h3">
-              <center> Dashboard of LTN2  </center> 
+              <center> Dashboard of LTN4  </center> 
               </Typography>
       <Container maxWidth="xl">
         <Grid numColsMd={2} numColsLg={4} className="gap-6 my-8">
 
-          <Temperature
+          <Temperature4
             difference={12}
             positive
             sx={{ height: '100%' }}
             value="24°C"
           />
 
-          <Humidity
+          <Humidity4
             difference={16}
             positive={false}
             sx={{ height: '100%' }}
             value="1.6%"
           />
 
-          <Gaz
+          <Gaz4
             sx={{ height: '100%' }}
             value={75.5}
           />
 
-          < Sound
+          < Sound4
             sx={{ height: '100%' }}
             value="15%"
           />
         </Grid>
         <Grid numColsMd={2} numColsLg={2} className="gap-6 my-8">
-          <TempHistory2 />
-          <HumidityHistory2 />
+          <TempHistory4 />
+          <HumidityHistory4 />
         </Grid>
         <Grid numColsMd={2} numColsLg={2} className="gap-6 my-8">
-          <GazHistory2 />
-          <SoundHistory2 />
+          <GazHistory4 />
+          <SoundHistory4 />
         </Grid>
 
 

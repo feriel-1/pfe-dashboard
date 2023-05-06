@@ -30,7 +30,7 @@ export const ServerRoom = (props) => {
       <Card>
       <Flex alignItems="center" justifyContent="evenly" >
       <Metric>Dashboard of LTN 3 </Metric>
-        <Button size="xl" onClick={() => console.log("clicked")}>
+        <Button size="xl" onClick={() => router.push('/Dash3')}>
         Server room 3
     </Button>
     </Flex>
@@ -38,7 +38,7 @@ export const ServerRoom = (props) => {
       <Card>
       <Flex alignItems="center" justifyContent="evenly" >
       <Metric>Dashboard of LTN 4 </Metric>
-        <Button size="xl" onClick={() => console.log("clicked")}>
+        <Button size="xl" onClick={() => router.push('/Dash4')}>
         Server room 4
     </Button>
     </Flex>
