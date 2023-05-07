@@ -2,11 +2,11 @@ import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { Temperature } from 'src/components/ServerRoom2/Temp';
+import { Temperature2 } from 'src/components/ServerRoom2/Temp2';
 
-import { Gaz } from 'src/components/ServerRoom2/Gaz';
-import { Humidity } from 'src/components/ServerRoom2/Humidity';
-import { Sound } from 'src/components/ServerRoom2/Sound';
+import { Gaz2 } from 'src/components/ServerRoom2/Gaz2';
+import { Humidity2 } from 'src/components/ServerRoom2/Humidity2';
+import { Sound2 } from 'src/components/ServerRoom2/Sound2';
 import { maxWidth, width } from '@mui/system';
 import { SoundHistory2 } from 'src/components/ServerRoom2/SoundHistory2';
 import { HumidityHistory2 } from 'src/components/ServerRoom2/HumidityHistory2';
@@ -38,26 +38,26 @@ const Page = () => (
       <Container maxWidth="xl">
         <Grid numColsMd={2} numColsLg={4} className="gap-6 my-8">
 
-          <Temperature
+          <Temperature2
             difference={12}
             positive
             sx={{ height: '100%' }}
             value="24°C"
           />
 
-          <Humidity
+          <Humidity2
             difference={16}
             positive={false}
             sx={{ height: '100%' }}
             value="1.6%"
           />
 
-          <Gaz
+          <Gaz2
             sx={{ height: '100%' }}
             value={75.5}
           />
 
-          < Sound
+          < Sound2
             sx={{ height: '100%' }}
             value="15%"
           />

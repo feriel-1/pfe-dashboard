@@ -13,7 +13,7 @@ import {
 
 import {GiGasStove} from 'react-icons/gi'
 
-export const Gaz = (props) => {
+export const Gaz2 = (props) => {
   const { value, sx } = props;
 
   return (

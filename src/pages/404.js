@@ -7,7 +7,7 @@ const Page = () => (
   <>
     <Head>
       <title>
-        LTN2
+        ERROR
       </title>
     </Head>
     <Box
