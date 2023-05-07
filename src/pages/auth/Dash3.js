@@ -10,12 +10,12 @@ import { Sound3 } from 'src/components/ServerRoom3/Sound3';
 
 import { SoundHistory3} from 'src/components/ServerRoom3/SoundHistory3';
 import { HumidityHistory3 } from 'src/components/ServerRoom3/HumidityHistory3';
-import { GazHistory3 } from 'src/components/ServerRoom3/GazHistory3';
+import { GazHistory3 } from 'src/components/ServerRoom3/GazHisstory3';
 import { TempHistory3} from 'src/components/ServerRoom3/TemperatureHistory3';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
-import { Gaz3 } from 'src/components/ServerRoom3/Gaz3';
+
 
 const now = new Date();
 

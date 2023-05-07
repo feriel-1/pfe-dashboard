@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { subDays, subHours } from 'date-fns';
 import { Box, Container, } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { Temperature4 } from 'src/components/ServerRoom2/Temperature4';
+import { Temperature4 } from 'src/components/ServerRoom4/Temperature4';
 
 import { Gaz4 } from 'src/components/ServerRoom4/Gaz4';
 import { Humidity4 } from 'src/components/ServerRoom4/Humidity4';

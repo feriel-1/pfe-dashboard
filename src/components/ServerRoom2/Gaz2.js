@@ -60,7 +60,7 @@ export const Gaz2 = (props) => {
   );
 };
 
-Gaz.propTypes = {
+Gaz2.propTypes = {
   value: PropTypes.number.isRequired,
   sx: PropTypes.object
 };
