@@ -58,19 +58,9 @@ import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/mate
               >
                 {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
               </SvgIcon>
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
+             
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since yesterday
-            </Typography>
+        
           </Stack>
         )}
       </CardContent>

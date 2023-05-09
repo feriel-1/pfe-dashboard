@@ -13,7 +13,7 @@ const Humidity2 = (props) => {
         <Stack alignItems="flex-start" direction="row" justifyContent="space-between" spacing={3}>
           <Stack spacing={1}>
             <Typography color="text.secondary" variant="overline">
-              Humidity LTN2
+              Humidity
             </Typography>
             <Typography variant="h4">{value}</Typography>
           </Stack>
@@ -29,18 +29,7 @@ const Humidity2 = (props) => {
             </SvgIcon>
           </Avatar>
         </Stack>
-        {difference && (
-          <Stack alignItems="center" direction="row" spacing={2} sx={{ mt: 2 }}>
-            <Stack alignItems="center" direction="row" spacing={0.5}>
-              <SvgIcon color={positive ? "success" : "error"} fontSize="small">
-                {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
-              </SvgIcon>
-              <Typography color={positive ? "success.main" : "error.main"} variant="body2">
-                {difference}%
-              </Typography>
-            </Stack>
-          </Stack>
-        )}
+    
       </CardContent>
     </Card>
   );

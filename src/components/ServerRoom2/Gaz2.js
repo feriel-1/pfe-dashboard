@@ -19,7 +19,9 @@ const Gaz2 = (props) => {
       <CardContent>
         <Stack alignItems="flex-start" direction="row" justifyContent="space-between" spacing={3}>
           <Stack spacing={1}>
-            <Typography color="text.secondary" gutterBottom variant="overline">
+            <Typography color="text.secondary"
+             gutterBottom
+             variant="overline">
               Gaz sensor
             </Typography>
             <Typography variant="h4">{value}</Typography>

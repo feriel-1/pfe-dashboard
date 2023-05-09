@@ -59,15 +59,11 @@ const Page = () => {
               <>
 
           <Temperature4
-            difference={12}
-            positive
             sx={{ height: '100%' }}
             value={data.Temperature}
           />
 
           <Humidity4
-            difference={16}
-            positive={false}
             sx={{ height: '100%' }}
             value={data.Humidity}
           />
@@ -76,7 +72,6 @@ const Page = () => {
             sx={{ height: '100%' }}
             value={data.Gaz}
           />
-
           < Sound4
             sx={{ height: '100%' }}
             value={data.Sound}
