@@ -1,4 +1,5 @@
 import { Card, Title, LineChart } from "@tremor/react";
+import exp from "constants";
 
 const chartdata = [
     {
@@ -26,7 +27,7 @@ const chartdata = [
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
 
-export const HumidityHistory3 = () => (
+ const HumidityHistory3 = () => (
   <Card>
     <Title> Humidity History3 </Title>
     <LineChart
@@ -40,3 +41,4 @@ export const HumidityHistory3 = () => (
     />
   </Card>
 );
+export default HumidityHistory3;

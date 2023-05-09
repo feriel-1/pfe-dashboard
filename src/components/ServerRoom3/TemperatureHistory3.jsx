@@ -26,7 +26,7 @@ const chartdata = [
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
 
-export const TempHistory3 = () => (
+const TempHistory3 = () => (
   <Card>
     <Title>Temperature History LTN3</Title>
     <LineChart
@@ -40,3 +40,4 @@ export const TempHistory3 = () => (
     />
   </Card>
 );
+export default TempHistory3;

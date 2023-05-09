@@ -34,7 +34,7 @@ export const OverviewGaz = (props) => {
               Gaz sensor
             </Typography>
             <Typography variant="h4">
-              {value}%
+              {value}
             </Typography>
           </Stack>
           <Avatar
@@ -49,12 +49,6 @@ export const OverviewGaz = (props) => {
             </SvgIcon>
           </Avatar>
         </Stack>
-        <Box sx={{ mt: 3 }}>
-          <LinearProgress
-            value={value}
-            variant="determinate"
-          />
-        </Box>
       </CardContent>
     </Card>
   );

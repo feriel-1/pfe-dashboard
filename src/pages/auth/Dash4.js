@@ -15,10 +15,28 @@ import { TempHistory4 } from 'src/components/ServerRoom4/TemperatureHistory4';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
-
+import { database } from "src/firebase/FireBase";
+import { useState } from "react";
+import { getDatabase, ref, child, get } from "firebase/database";
 const now = new Date();
 
-const Page = () => (
+const Page = () => {
+  const [data, setData] = useState(null);
+
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, `Rooms`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        setData(snapshot.val().LTN1);
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  return (
+    
   <>
     <Head>
       <title>
@@ -37,30 +55,34 @@ const Page = () => (
               </Typography>
       <Container maxWidth="xl">
         <Grid numColsMd={2} numColsLg={4} className="gap-6 my-8">
+        {data && (
+              <>
 
           <Temperature4
             difference={12}
             positive
             sx={{ height: '100%' }}
-            value="24°C"
+            value={data.Temperature}
           />
 
           <Humidity4
             difference={16}
             positive={false}
             sx={{ height: '100%' }}
-            value="1.6%"
+            value={data.Humidity}
           />
 
           <Gaz4
             sx={{ height: '100%' }}
-            value={75.5}
+            value={data.Gaz}
           />
 
           < Sound4
             sx={{ height: '100%' }}
-            value="15%"
+            value={data.Sound}
           />
+          </>
+        )}
         </Grid>
         <Grid numColsMd={2} numColsLg={2} className="gap-6 my-8">
           <TempHistory4 />
@@ -75,11 +97,12 @@ const Page = () => (
       </Container>
     </Box>
   </>
-);
+);}
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}
   </DashboardLayout>
 );
+
 
 export default Page;

@@ -25,8 +25,7 @@ const chartdata = [
 
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
-
-export const SoundHistory2 = () => (
+ const SoundHistory2 = () => (
   <Card>
     <Title>Sound History LTN2 </Title>
     <LineChart
@@ -40,3 +39,4 @@ export const SoundHistory2 = () => (
     />
   </Card>
 );
+export default SoundHistory2;

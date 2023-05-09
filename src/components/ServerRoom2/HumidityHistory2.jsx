@@ -26,7 +26,7 @@ const chartdata = [
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
 
-export const HumidityHistory2 = () => (
+ const HumidityHistory2 = () => (
   <Card>
     <Title> Humidity History2 </Title>
     <LineChart
@@ -40,3 +40,4 @@ export const HumidityHistory2 = () => (
     />
   </Card>
 );
+export default HumidityHistory2 ;

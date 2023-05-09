@@ -5,7 +5,7 @@ import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import {WiHumidity} from 'react-icons/wi'
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
-export const Humidity3 = (props) => {
+ const Humidity3 = (props) => {
   const { difference, positive = false, sx, value } = props;
 
   return (
@@ -84,4 +84,5 @@ Humidity3.propTypes = {
   value: PropTypes.string.isRequired,
   sx: PropTypes.object
 };
+export default Humidity3;
 

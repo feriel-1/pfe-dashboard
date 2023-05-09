@@ -25,8 +25,7 @@ const chartdata = [
 
 const dataFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
-
-export const GazHistory3 = () => (
+const GazHistory3 = () => (
   <Card>
     <Title>Gaz History3 </Title>
     <LineChart
@@ -40,3 +39,4 @@ export const GazHistory3 = () => (
     />
   </Card>
 );
+export default GazHistory3;

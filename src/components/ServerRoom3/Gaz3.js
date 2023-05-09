@@ -13,7 +13,7 @@ import {
 
 import {GiGasStove} from 'react-icons/gi'
 
-export const Gaz3 = (props) => {
+ const Gaz3 = (props) => {
   const { value, sx } = props;
 
   return (
@@ -34,7 +34,7 @@ export const Gaz3 = (props) => {
               Gaz sensor
             </Typography>
             <Typography variant="h4">
-              {value}%
+              {value}
             </Typography>
           </Stack>
           <Avatar
@@ -49,12 +49,6 @@ export const Gaz3 = (props) => {
             </SvgIcon>
           </Avatar>
         </Stack>
-        <Box sx={{ mt: 3 }}>
-          <LinearProgress
-            value={value}
-            variant="determinate"
-          />
-        </Box>
       </CardContent>
     </Card>
   );
@@ -64,3 +58,4 @@ Gaz3.propTypes = {
   value: PropTypes.number.isRequired,
   sx: PropTypes.object
 };
+export default Gaz3;

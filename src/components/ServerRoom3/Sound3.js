@@ -4,7 +4,7 @@ import {AiTwotoneSound} from 'react-icons/ai'
 
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
-export const Sound3 = (props) => {
+const Sound3 = (props) => {
   const { value, sx } = props;
 
   return (
@@ -48,3 +48,4 @@ Sound3.propTypes = {
   value: PropTypes.string,
   sx: PropTypes.object
 };
+export default Sound3;

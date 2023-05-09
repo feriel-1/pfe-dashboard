@@ -3,7 +3,9 @@ import NextLink from 'next/link';
 import ArrowLeftIcon from '@heroicons/react/24/solid/ArrowLeftIcon';
 import { Box, Button, Container, SvgIcon, Typography } from '@mui/material';
 
+
 const Page = () => (
+
   <>
     <Head>
       <title>
@@ -76,5 +78,6 @@ const Page = () => (
     </Box>
   </>
 );
+            
 
 export default Page;

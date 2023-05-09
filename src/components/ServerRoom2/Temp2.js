@@ -3,7 +3,7 @@ import { DeviceThermostatIcon, Card, CardContent, Stack, SvgIcon, Typography,Ava
 import { CiTempHigh } from 'react-icons/ci'
 
 
-export const Temperature = (props) => {
+const Temperature2 = (props) => {
   const { difference, positive = false, sx, value } = props;
 
   return (
@@ -63,7 +63,6 @@ export const Temperature = (props) => {
               color="text.secondary"
               variant="caption"
             >
-              Since yesterday
             </Typography>
            
           </Stack>
@@ -73,9 +72,11 @@ export const Temperature = (props) => {
   );
 };
 
-Temperature.prototypes = {
+Temperature2.prototypes = {
   difference: PropTypes.number,
   positive: PropTypes.bool,
   sx: PropTypes.object,
   value: PropTypes.string.isRequired
 };
+
+export default Temperature2;
