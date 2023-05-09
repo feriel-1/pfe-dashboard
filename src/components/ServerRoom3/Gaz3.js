@@ -13,7 +13,7 @@ import {
 
 import {GiGasStove} from 'react-icons/gi'
 
-export const OverviewGaz = (props) => {
+ const Gaz3 = (props) => {
   const { value, sx } = props;
 
   return (
@@ -54,7 +54,8 @@ export const OverviewGaz = (props) => {
   );
 };
 
-OverviewGaz.propTypes = {
+Gaz3.propTypes = {
   value: PropTypes.number.isRequired,
   sx: PropTypes.object
 };
+export default Gaz3;

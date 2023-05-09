@@ -13,7 +13,7 @@
 
 - [Dashboard Page](https://material-kit-react.devias.io)
 - [Companies Page](https://material-kit-react.devias.io/companies)
-- [Customers Page](https://material-kit-react.devias.io/customers)
+- [ SalleDeServeur Page](https://material-kit-react.devias.io/SalleDeServeur)
 - [Account Page](https://material-kit-react.devias.io/account)
 - [Settings Page](https://material-kit-react.devias.io/settings)
 - [Login Page](https://material-kit-react.devias.io/auth/login)
@@ -82,9 +82,10 @@ material-kit-react
 		├── _app.js
 		├── _document.js
 		├── account.js
-		├── companies.js
+		├── SalleDeServeur.js
 		├── customers.js
 		├── index.js
+
 		├── products.js
 		└── settings.js
 		└──  auth
@@ -92,18 +93,4 @@ material-kit-react
 			└── register.js
 ```
 
-## Resources
 
-- More freebies like this one: <https://devias.io>
-
-## Reporting Issues:
-
-- [Github Issues Page](https://github.com/devias-io/react-material-dashboard/issues?ref=devias-io)
-
-## License
-
-- Licensed under MIT (https://github.com/devias-io/react-material-dashboard/blob/master/LICENSE.md)
-
-## Contact Us
-
-- Email Us: support@deviasio.zendesk.com

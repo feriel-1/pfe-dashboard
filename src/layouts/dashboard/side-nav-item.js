@@ -32,10 +32,10 @@ export const SideNavItem = (props) => {
             textAlign: 'left',
             width: '100%',
             ...(active && {
-              backgroundColor: 'rgba(255, 255, 255, 0.04)'
+              backgroundColor: '#60a5fa'
             }),
             '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.04)'
+              backgroundColor: ' #3b61de '
             }
           }}
           {...linkProps}
@@ -50,7 +50,7 @@ export const SideNavItem = (props) => {
                 justifyContent: 'center',
                 mr: 2,
                 ...(active && {
-                  color: 'primary.main'
+                  color: '#2952a3'
                 })
               }}
             >

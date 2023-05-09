@@ -25,8 +25,8 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
-      password: 'Password123!',
+      email: 'benmamiaferiel@gmail.com',
+      password: 'leonileoni',
       submit: null
     },
     validationSchema: Yup.object({
@@ -59,13 +59,6 @@ const Page = () => {
     []
   );
 
-  const handleSkip = useCallback(
-    () => {
-      auth.skip();
-      router.push('/');
-    },
-    [auth, router]
-  );
 
   return (
     <>
@@ -96,10 +89,10 @@ const Page = () => {
               spacing={1}
               sx={{ mb: 3 }}
             >
-              <Typography variant="h4">
-                LEONI
+              <Typography variant="h1">
+              <center> LEONI </center> 
               </Typography>
-              <Typography variant="h4">
+              <Typography variant="h5">
                 Login
               </Typography>
              
@@ -120,7 +113,7 @@ const Page = () => {
                 noValidate
                 onSubmit={formik.handleSubmit}
               >
-                <Stack spacing={3}>
+               <Stack spacing={3}>
                   <TextField
                     error={!!(formik.touched.email && formik.errors.email)}
                     fullWidth
@@ -130,7 +123,7 @@ const Page = () => {
                     onBlur={formik.handleBlur}
                     onChange={formik.handleChange}
                     type="email"
-                    value={formik.values.email}
+                    
                   />
                   <TextField
                     error={!!(formik.touched.password && formik.errors.password)}
@@ -141,7 +134,7 @@ const Page = () => {
                     onBlur={formik.handleBlur}
                     onChange={formik.handleChange}
                     type="password"
-                    value={formik.values.password}
+                
                   />
                 </Stack>
                
@@ -160,6 +153,7 @@ const Page = () => {
                   sx={{ mt: 3 }}
                   type="submit"
                   variant="contained"
+                
                 >
                   Continue
                 </Button>

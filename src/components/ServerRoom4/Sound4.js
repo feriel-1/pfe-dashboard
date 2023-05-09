@@ -1,19 +1,10 @@
 import PropTypes from 'prop-types';
+import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
+import {AiTwotoneSound} from 'react-icons/ai'
 
-import {
-  Avatar,
-  Box,
-  Card,
-  CardContent,
-  LinearProgress,
-  Stack,
-  SvgIcon,
-  Typography
-} from '@mui/material';
+import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
-import {GiGasStove} from 'react-icons/gi'
-
-export const OverviewGaz = (props) => {
+export const Sound4 = (props) => {
   const { value, sx } = props;
 
   return (
@@ -28,10 +19,9 @@ export const OverviewGaz = (props) => {
           <Stack spacing={1}>
             <Typography
               color="text.secondary"
-              gutterBottom
               variant="overline"
             >
-              Gaz sensor
+              Sound sensor LTN4
             </Typography>
             <Typography variant="h4">
               {value}
@@ -39,13 +29,13 @@ export const OverviewGaz = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: '#0039e6',
+              backgroundColor: '#3366ff',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <GiGasStove />
+              <AiTwotoneSound />
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -54,7 +44,7 @@ export const OverviewGaz = (props) => {
   );
 };
 
-OverviewGaz.propTypes = {
-  value: PropTypes.number.isRequired,
+Sound4.propTypes = {
+  value: PropTypes.string,
   sx: PropTypes.object
 };

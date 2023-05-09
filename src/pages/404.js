@@ -3,11 +3,13 @@ import NextLink from 'next/link';
 import ArrowLeftIcon from '@heroicons/react/24/solid/ArrowLeftIcon';
 import { Box, Button, Container, SvgIcon, Typography } from '@mui/material';
 
+
 const Page = () => (
+
   <>
     <Head>
       <title>
-        404 | Devias Kit
+        ERROR
       </title>
     </Head>
     <Box
@@ -76,5 +78,6 @@ const Page = () => (
     </Box>
   </>
 );
+            
 
 export default Page;
