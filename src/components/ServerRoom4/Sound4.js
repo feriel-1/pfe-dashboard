@@ -21,7 +21,7 @@ export const Sound4 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Sound sensor LTN4
+              Sound sensor
             </Typography>
             <Typography variant="h4">
               {value}

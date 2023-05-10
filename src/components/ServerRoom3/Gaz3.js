@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 
 import {
   Avatar,
-  Box,
-  Card,
+    Card,
   CardContent,
-  LinearProgress,
-  Stack,
+    Stack,
   SvgIcon,
   Typography
 } from '@mui/material';

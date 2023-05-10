@@ -15,7 +15,7 @@ const Humidity2 = (props) => {
             <Typography color="text.secondary" variant="overline">
               Humidity
             </Typography>
-            <Typography variant="h4">{value}</Typography>
+            <Typography variant="h4">{value}%</Typography>
           </Stack>
           <Avatar
             sx={{

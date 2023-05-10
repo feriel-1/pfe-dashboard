@@ -2,11 +2,11 @@ import Head from "next/head";
 import { subDays, subHours } from "date-fns";
 import { Box, Container, Typography } from "@mui/material";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
-import { OverviewTemperature } from "src/sections/overview/overview-temperature";
+import { Temperature } from "src/components/ServerRoom1/Temperature";
 
-import { OverviewGaz } from "src/sections/overview/overview-gaz";
-import { OverviewHumidity } from "src/sections/overview/overview-humidity";
-import { OverviewSound } from "src/sections/overview/overview-sound";
+import { Gaz } from "src/components/ServerRoom1/Gaz";
+import { Humidity } from "src/components/ServerRoom1/Humidity";
+import { Sound } from "src/components/ServerRoom1/Sound";
 import { maxWidth, width } from "@mui/system";
 import { SoundHistory } from "src/components/ServerRoom1/SoundHistory";
 import { HumidityHistory } from "src/components/ServerRoom1/HumidityHistory";
@@ -51,23 +51,19 @@ const Page = () => {
           <Grid numColsMd={2} numColsLg={4} className="gap-6 my-8">
             {data && (
               <>
-                <OverviewTemperature
-                  difference={12}
-                  positive
+                <Temperature
                   sx={{ height: "100%" }}
                   value={data.Temperature}
                 />
 
-                <OverviewHumidity
-                  difference={16}
-                  positive={false}
+                <Humidity
                   sx={{ height: "100%" }}
                   value={data.Humidity}
                 />
 
-                <OverviewGaz sx={{ height: "100%" }} value={data.Gas} />
+                <Gaz sx={{ height: "100%" }} value={data.Gas} />
 
-                <OverviewSound sx={{ height: "100%" }} value={data.Sound} />
+                <Sound sx={{ height: "100%" }} value={data.Sound} />
               </>
             )}
           </Grid>

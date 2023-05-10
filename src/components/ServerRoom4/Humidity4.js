@@ -22,10 +22,10 @@ export const Humidity4 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Humidity LTN4
+              Humidity 
             </Typography>
             <Typography variant="h4">
-              {value}
+              {value}%
             </Typography>
           </Stack>
           <Avatar

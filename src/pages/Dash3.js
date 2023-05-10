@@ -12,7 +12,7 @@ import  HumidityHistory3  from 'src/components/ServerRoom3/HumidityHistory3';
 import  GazHistory3  from 'src/components/ServerRoom3/GazHisstory3';
 import  TempHistory3 from 'src/components/ServerRoom3/TemperatureHistory3';
 
-import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
+import { Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
 import { database } from "src/firebase/FireBase";
 import { useState } from "react";

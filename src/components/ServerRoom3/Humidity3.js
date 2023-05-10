@@ -22,10 +22,10 @@ import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/mate
               color="text.secondary"
               variant="overline"
             >
-              Humidity LTN3
+              Humidity 
             </Typography>
             <Typography variant="h4">
-              {value}
+              {value}%
             </Typography>
           </Stack>
           <Avatar
