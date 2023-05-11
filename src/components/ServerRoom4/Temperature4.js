@@ -20,7 +20,7 @@ export const Temperature4 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Temperature LTN4
+              Temperature
             </Typography>
             <Typography variant="h4">
               {value}

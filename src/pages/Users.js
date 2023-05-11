@@ -15,7 +15,6 @@ import {
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CompanyCard } from 'src/sections/companies/company-card';
 import { CompaniesSearch } from 'src/sections/companies/companies-search';
-
 const companies = [
   {
     id: '2569ce0d517a7f06d3ea1f24',

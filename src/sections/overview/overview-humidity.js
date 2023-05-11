@@ -56,21 +56,11 @@ export const OverviewHumidity = (props) => {
                 color={positive ? 'success' : 'error'}
                 fontSize="small"
               >
-                {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
+           
               </SvgIcon>
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
+      
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since yesterday
-            </Typography>
+           
           </Stack>
         )}
       </CardContent>

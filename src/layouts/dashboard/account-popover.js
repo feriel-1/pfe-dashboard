@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import PropTypes from 'prop-types';
-import { Box, Divider, MenuItem, MenuList, Popover, Typography } from '@mui/material';
+import { Box, Divider, MenuItem, MenuList, Popover, Typography ,SvgIcon, Avatar } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
-
 export const AccountPopover = (props) => {
   const { anchorEl, onClose, open } = props;
   const router = useRouter();
@@ -35,6 +34,7 @@ export const AccountPopover = (props) => {
           px: 2
         }}
       >
+    
         <Typography variant="overline">
           Account
         </Typography>
@@ -42,7 +42,7 @@ export const AccountPopover = (props) => {
           color="text.secondary"
           variant="body2"
         >
-          Anika Visser
+          Mohamed Aouichaoui
         </Typography>
       </Box>
       <Divider />

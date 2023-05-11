@@ -22,10 +22,10 @@ export const Humidity4 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Humidity LTN4
+              Humidity 
             </Typography>
             <Typography variant="h4">
-              {value}
+              {value}%
             </Typography>
           </Stack>
           <Avatar
@@ -58,19 +58,9 @@ export const Humidity4 = (props) => {
               >
                 {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
               </SvgIcon>
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
+          
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since yesterday
-            </Typography>
+          
           </Stack>
         )}
       </CardContent>

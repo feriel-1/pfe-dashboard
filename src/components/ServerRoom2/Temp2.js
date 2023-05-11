@@ -20,7 +20,7 @@ const Temperature2 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Temperature LTN2
+              Temperature
             </Typography>
             <Typography variant="h4">
               {value}
@@ -51,19 +51,8 @@ const Temperature2 = (props) => {
               direction="row"
               spacing={0.5}
             >
-
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-            </Typography>
+           
            
           </Stack>
         )}

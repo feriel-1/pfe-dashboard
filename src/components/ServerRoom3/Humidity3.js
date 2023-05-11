@@ -22,10 +22,10 @@ import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/mate
               color="text.secondary"
               variant="overline"
             >
-              Humidity LTN3
+              Humidity 
             </Typography>
             <Typography variant="h4">
-              {value}
+              {value}%
             </Typography>
           </Stack>
           <Avatar
@@ -58,19 +58,9 @@ import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/mate
               >
                 {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
               </SvgIcon>
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
+             
             </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since yesterday
-            </Typography>
+        
           </Stack>
         )}
       </CardContent>

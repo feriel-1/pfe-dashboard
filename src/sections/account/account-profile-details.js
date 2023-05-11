@@ -14,10 +14,10 @@ import {
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Feriel',
-    lastName: 'Ben Mamia',
-    email: 'benmamiaferiel@gmail.com',
-    phone: '29311632',
+    firstName: 'Mohamed',
+    lastName: 'Aouichaoui',
+    email: 'mohamed.aouichaoui@leoni.com',
+    phone: '50510292',
     country: 'LTN3'
   });
 

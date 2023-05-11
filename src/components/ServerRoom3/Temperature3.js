@@ -20,7 +20,7 @@ const Temperature3 = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Temperature LTN3
+              Temperature 
             </Typography>
             <Typography variant="h4">
               {value}

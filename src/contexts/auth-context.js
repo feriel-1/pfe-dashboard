@@ -83,9 +83,8 @@ export const AuthProvider = (props) => {
     if (isAuthenticated) {
       const user = {
         id: '5e86809283e28b96d2d38537',
-        avatar: '/assets/avatars/avatar-anika-visser.png',
-        name: 'Feriel Ben Mamia ',
-        email: 'benmamiaferiel@gmail.com'
+        name: 'Mohamed Aouichaoui ',
+        email: 'mohamed.aouichaoui@leoni.com'
       };
 
       dispatch({
@@ -116,9 +115,8 @@ export const AuthProvider = (props) => {
 
     const user = {
       id: '5e86809283e28b96d2d38537',
-      avatar: '/assets/avatars/avatar-anika-visser.png',
-      name: 'Feriel Ben Mamia ',
-      email: 'benmamiaferiel@gmail.com'
+      name: 'Mohamed Aouichaoui',
+      email: 'mohamed.aouichaoui@leoni.com'
     };
     dispatch({
       type: HANDLERS.SIGN_IN,
@@ -127,7 +125,7 @@ export const AuthProvider = (props) => {
   };
 
   const signIn = async (email, password) => {
-    if (email !== 'benmamiaferiel@gmail.com' || password !== 'leonileoni') {
+    if (email !== 'mohamed.aouichaoui@leoni.com' || password !== 'leonileoni') {
       throw new Error('Please check your email and password');
     }
 
@@ -139,9 +137,8 @@ export const AuthProvider = (props) => {
 
     const user = {
       id: '5e86809283e28b96d2d38537',
-      avatar: '/assets/avatars/avatar-anika-visser.png',
-      name: 'Feriel Ben Mamia ',
-      email: 'benmamiaferiel@gmail.com'
+      name: 'Mohamed Aouichaoui',
+      email: 'mohamed.aouichaoui@leoni.com'
     };
 
     dispatch({
