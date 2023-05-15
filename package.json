@@ -26,7 +26,8 @@
     "@tremor/react": "^2.4.0",
     "apexcharts": "3.37.0",
     "date-fns": "2.29.3",
-    "firebase": "^9.21.0",
+    "dom": "^0.0.3",
+    "firebase": "^9.22.0",
     "formik": "2.2.9",
     "next": "13.1.6",
     "nprogress": "0.2.0",
@@ -35,6 +36,7 @@
     "react-apexcharts": "1.4.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-router": "^6.11.1",
     "simplebar-react": "^3.2.1",
     "tremor": "^0.0.1",
     "yup": "1.0.0"

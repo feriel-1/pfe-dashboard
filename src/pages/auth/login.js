@@ -1,9 +1,12 @@
-import { useCallback, useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useCallback, useState } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+//import { getAuth } from '../../firebase';
+import { auth } from 'src/firebase';
 import {
   Alert,
   Box,
@@ -16,19 +19,32 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import { useAuth } from 'src/hooks/use-auth';
-import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+//import { useAuth } from 'src/hooks/use-auth';
+//import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+const initialValues = {
+  email: '',
+  password: ''
+};
+const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const Page = () => {
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const router = useRouter();
-  const auth = useAuth();
+
+  //const auth = useAuth();
   const [method, setMethod] = useState('email');
   const formik = useFormik({
-    initialValues: {
-      email: 'mohamed.aouichaoui@leoni.com',
-      password: 'leonileoni',
-      submit: null
-    },
+   initialValues,
     validationSchema: Yup.object({
       email: Yup
         .string()
@@ -109,9 +125,9 @@ const Page = () => {
               
             </Tabs>
             {method === 'email' && (
-              <form
+              <form 
                 noValidate
-                onSubmit={formik.handleSubmit}
+                onSubmit={signIn}
               >
                <Stack spacing={3}>
                   <TextField
@@ -121,8 +137,10 @@ const Page = () => {
                     label="Email Address"
                     name="email"
                     onBlur={formik.handleBlur}
-                    onChange={formik.handleChange}
+                    onChange={(e) => {formik.handleChange(e)
+                      setEmail(e.target.value)}}
                     type="email"
+                    value={email}
                     
                   />
                   <TextField
@@ -132,8 +150,10 @@ const Page = () => {
                     label="Password"
                     name="password"
                     onBlur={formik.handleBlur}
-                    onChange={formik.handleChange}
+                    onChange={(e) => {formik.handleChange(e)
+                      setPassword(e.target.value)}}
                     type="password"
+                    value={password}
                 
                   />
                 </Stack>
@@ -153,7 +173,7 @@ const Page = () => {
                   sx={{ mt: 3 }}
                   type="submit"
                   variant="contained"
-                
+                  onClick={signIn}
                 >
                   Continue
                 </Button>
@@ -169,4 +189,4 @@ const Page = () => {
 };
 
 
-export default Page;
+export default SignIn;
