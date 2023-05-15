@@ -35,7 +35,7 @@ export const items = [
       //  <UsersIcon />
      // </SvgIcon>
    // )
- // },
+  //},
   {
     title: 'Settings',
     path: '/settings',
