@@ -1,12 +1,9 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-//import { getAuth } from '../../firebase';
-import { auth } from 'src/firebase';
 import {
   Alert,
   Box,
@@ -19,32 +16,19 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-//import { useAuth } from 'src/hooks/use-auth';
-//import { Layout as AuthLayout } from 'src/layouts/auth/layout';
-const initialValues = {
-  email: '',
-  password: ''
-};
-const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const signIn = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+import { useAuth } from 'src/hooks/use-auth';
+import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+const Page = () => {
   const router = useRouter();
-
-  //const auth = useAuth();
+  const auth = useAuth();
   const [method, setMethod] = useState('email');
   const formik = useFormik({
-   initialValues,
+    initialValues: {
+
+      email: 'mohamed.aouichaoui@leoni.com',
+      password: 'leonileoni'
+    
+    },
     validationSchema: Yup.object({
       email: Yup
         .string()
@@ -57,7 +41,7 @@ const SignIn = () => {
         .required('Password is required')
     }),
     onSubmit: async (values, helpers) => {
-      try {
+    try {
         await auth.signIn(values.email, values.password);
         router.push('/');
       } catch (err) {
@@ -65,17 +49,14 @@ const SignIn = () => {
         helpers.setErrors({ submit: err.message });
         helpers.setSubmitting(false);
       }
-    }
+  }
   });
-
   const handleMethodChange = useCallback(
     (event, value) => {
       setMethod(value);
     },
     []
   );
-
-
   return (
     <>
       <Head>
@@ -125,9 +106,9 @@ const SignIn = () => {
               
             </Tabs>
             {method === 'email' && (
-              <form 
-                noValidate
-                onSubmit={signIn}
+              <form
+               // noValidate
+                onSubmit={formik.handleSubmit}
               >
                <Stack spacing={3}>
                   <TextField
@@ -137,10 +118,8 @@ const SignIn = () => {
                     label="Email Address"
                     name="email"
                     onBlur={formik.handleBlur}
-                    onChange={(e) => {formik.handleChange(e)
-                      setEmail(e.target.value)}}
+                    onChange={formik.handleChange}
                     type="email"
-                    value={email}
                     
                   />
                   <TextField
@@ -150,10 +129,8 @@ const SignIn = () => {
                     label="Password"
                     name="password"
                     onBlur={formik.handleBlur}
-                    onChange={(e) => {formik.handleChange(e)
-                      setPassword(e.target.value)}}
+                    onChange={formik.handleChange}
                     type="password"
-                    value={password}
                 
                   />
                 </Stack>
@@ -173,7 +150,6 @@ const SignIn = () => {
                   sx={{ mt: 3 }}
                   type="submit"
                   variant="contained"
-                  onClick={signIn}
                 >
                   Continue
                 </Button>
@@ -187,6 +163,4 @@ const SignIn = () => {
     </>
   );
 };
-
-
-export default SignIn;
+export default Page;

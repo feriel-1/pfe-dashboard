@@ -1,4 +1,4 @@
- import Head from 'next/head';
+import Head from 'next/head';
 import { CacheProvider } from '@emotion/react';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -9,9 +9,7 @@ import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
 import 'simplebar-react/dist/simplebar.min.css';
-import '../styles/globals.css';
-import SignIn from './auth/login';
-
+import '../styles/globals.css'
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -41,8 +39,13 @@ const App = (props) => {
         <AuthProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <SignIn />
-           
+            <AuthConsumer>
+              {
+                (auth) => auth.isLoading
+                  ? <SplashScreen />
+                  : getLayout(<Component {...pageProps} />)
+              }
+            </AuthConsumer>
           </ThemeProvider>
         </AuthProvider>
       </LocalizationProvider>
