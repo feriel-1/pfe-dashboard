@@ -15,7 +15,10 @@ const Page = () => {
       email: '',
       name: '',
       password: '',
-      submit: null
+      position: '',
+      department:'',
+
+      //submit: null
     },
     validationSchema: Yup.object({
       email: Yup
@@ -30,11 +33,19 @@ const Page = () => {
       password: Yup
         .string()
         .max(255)
-        .required('Password is required')
+        .required('Password is required'),
+       position: Yup
+        .string()
+        .max(255)
+        .required('position is required') ,
+        department: Yup
+        .string()
+        .max(255)
+        .required('department is required')
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await auth.signUp(values.email, values.name, values.password);
+        await auth.signUp(values.email, values.name, values.password , values.department , values.position);
         router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
@@ -75,21 +86,6 @@ const Page = () => {
               <Typography variant="h4">
                 Register
               </Typography>
-              <Typography
-                color="text.secondary"
-                variant="body2"
-              >
-                Already have an account?
-                &nbsp;
-                <Link
-                  component={NextLink}
-                  href="/auth/login"
-                  underline="hover"
-                  variant="subtitle2"
-                >
-                  Log in
-                </Link>
-              </Typography>
             </Stack>
             <form
               noValidate
@@ -105,6 +101,26 @@ const Page = () => {
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   value={formik.values.name}
+                />
+                 <TextField
+                  error={!!(formik.touched.position && formik.errors.position)}
+                  fullWidth
+                  helperText={formik.touched.position && formik.errors.position}
+                  label="Position"
+                  name="position"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.position}
+                />
+                 <TextField
+                  error={!!(formik.touched.department && formik.errors.department)}
+                  fullWidth
+                  helperText={formik.touched.department && formik.errors.department}
+                  label="Departement"
+                  name="departement"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.department}
                 />
                 <TextField
                   error={!!(formik.touched.email && formik.errors.email)}

@@ -21,10 +21,6 @@ import {
 } from '@mui/material';
 //import { useAuth } from 'src/hooks/use-auth';
 //import { Layout as AuthLayout } from 'src/layouts/auth/layout';
-const initialValues = {
-  email: 'mohamed.aouichaoui@leoni.com',
-  password: 'leonileoni'
-};
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -69,7 +65,7 @@ const Page = () => {
     onSubmit: async (values, helpers) => {
     try {
         await auth.signIn(values.email, values.password);
-        router.push('/');
+        router.push('/ServerRoom'); 
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -134,9 +130,7 @@ const Page = () => {
             {method === 'email' && (
 
               <form 
-               // noValidate
-               // onSubmit={signIn}
-               // noValidate
+               
                 onSubmit={formik.handleSubmit}
               >
                <Stack spacing={3}>
@@ -183,7 +177,7 @@ const Page = () => {
                   sx={{ mt: 3 }}
                   type="submit"
                   variant="contained"
-                //  onClick={signIn}     
+                 
                  >
                   Continue
                 </Button>

@@ -45,14 +45,4 @@ export const items = [
       </SvgIcon>
     )
   },
-
-  {
-    title: 'Register',
-    path: '/auth/register',
-    icon: (
-      <SvgIcon fontSize="small">
-        <UserPlusIcon />
-      </SvgIcon>
-    )
-  },
 ];

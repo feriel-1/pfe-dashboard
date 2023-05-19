@@ -3,6 +3,18 @@ import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
 import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
 import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
 import {
+  Card,
+  Table,
+  TableHead,
+  TableRow,
+  TableHeaderCell,
+  TableBody,
+  TableCell,
+  Text,
+  Title,
+  Badge,
+} from "@tremor/react";
+import {
   Box,
   Button,
   Container,
@@ -12,61 +24,64 @@ import {
   Typography,
   Unstable_Grid2 as Grid
 } from '@mui/material';
+import { useRouter } from 'next/router';
+
+import { StatusOnlineIcon } from "@heroicons/react/outline";
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CompanyCard } from 'src/sections/companies/company-card';
 import { CompaniesSearch } from 'src/sections/companies/companies-search';
-const companies = [
+const data = [
   {
-    id: '2569ce0d517a7f06d3ea1f24',
-    createdAt: '27/03/2019',
-    description: 'Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.',
-    logo: '/assets/logos/logo-dropbox.png',
-    title: 'Dropbox',
-    downloads: '594'
+    name: "Viola Amherd",
+    Role: "Federal Councillor",
+    departement:
+      "The Federal Department of Defence, Civil Protection and Sport (DDPS)",
+    status: "active",
   },
   {
-    id: 'ed2b900870ceba72d203ec15',
-    createdAt: '31/03/2019',
-    description: 'Medium is an online publishing platform developed by Evan Williams, and launched in August 2012.',
-    logo: '/assets/logos/logo-medium.png',
-    title: 'Medium Corporation',
-    downloads: '625'
+    name: "Simonetta Sommaruga",
+    Role: "Federal Councillor",
+    departement:
+      "The Federal Department of the Environment, Transport, Energy and Communications (DETEC)",
+    status: "active",
   },
   {
-    id: 'a033e38768c82fca90df3db7',
-    createdAt: '03/04/2019',
-    description: 'Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.',
-    logo: '/assets/logos/logo-slack.png',
-    title: 'Slack',
-    downloads: '857'
+    name: "Alain Berset",
+    Role: "Federal Councillor",
+    departement: "The Federal Department of Home Affairs (FDHA)",
+    status: "active",
   },
   {
-    id: '1efecb2bf6a51def9869ab0f',
-    createdAt: '04/04/2019',
-    description: 'Lyft is an on-demand transportation company based in San Francisco, California.',
-    logo: '/assets/logos/logo-lyft.png',
-    title: 'Lyft',
-    downloads: '406'
+    name: "Ignazio Cassis",
+    Role: "Federal Councillor",
+    departement: "The Federal Department of Foreign Affairs (FDFA)",
+    status: "active",
   },
   {
-    id: '1ed68149f65fbc6089b5fd07',
-    createdAt: '04/04/2019',
-    description: 'GitHub is a web-based hosting service for version control of code using Git.',
-    logo: '/assets/logos/logo-github.png',
-    title: 'GitHub',
-    downloads: '835'
+    name: "Ueli Maurer",
+    Role: "Federal Councillor",
+    departement: "The Federal Department of Finance (FDF)",
+    status: "active",
   },
   {
-    id: '5dab321376eff6177407e887',
-    createdAt: '04/04/2019',
-    description: 'Squarespace provides software as a service for website building and hosting. Headquartered in NYC.',
-    logo: '/assets/logos/logo-squarespace.png',
-    title: 'Squarespace',
-    downloads: '835'
-  }
+    name: "Guy Parmelin",
+    Role: "Federal Councillor",
+    departement:
+      "The Federal Department of Economic Affairs, Education and Research (EAER)",
+    status: "active",
+  },
+  {
+    name: "Karin Keller-Sutter",
+    Role: "Federal Councillor",
+    departement: "The Federal Department of Justice and Police (FDJP)",
+    status: "active",
+  },
 ];
 
-const Page = () => (
+const Page = () => {
+ const router = useRouter();
+ return (
+
   <>
     <Head>
       <title>
@@ -87,36 +102,11 @@ const Page = () => (
             justifyContent="space-between"
             spacing={4}
           >
-            <Stack spacing={1}>
+            <Stack spacing={2}>
               <Typography variant="h4">
-                Companies
+                Users
               </Typography>
-              <Stack
-                alignItems="center"
-                direction="row"
-                spacing={1}
-              >
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowUpOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Import
-                </Button>
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowDownOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Export
-                </Button>
-              </Stack>
+              
             </Stack>
             <div>
               <Button
@@ -126,43 +116,68 @@ const Page = () => (
                   </SvgIcon>
                 )}
                 variant="contained"
+             onClick={() => router.push('./auth/register')}
               >
-                Add
+                Add user
+              </Button>
+            </div>
+            <div>
+              <Button
+                startIcon={(
+                  <SvgIcon fontSize="small">
+                    <PlusIcon />
+                  </SvgIcon>
+                )}
+                variant="contained"
+             onClick={() => router.push('./auth/register')}
+              >
+                Delete user
               </Button>
             </div>
           </Stack>
-          <CompaniesSearch />
-          <Grid
-            container
-            spacing={3}
-          >
-            {companies.map((company) => (
-              <Grid
-                xs={12}
-                md={6}
-                lg={4}
-                key={company.id}
-              >
-                <CompanyCard company={company} />
-              </Grid>
-            ))}
-          </Grid>
+        
+          
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'center'
             }}
           >
-            <Pagination
-              count={3}
-              size="small"
-            />
+             <Card>
+    <Title>List of users</Title>
+    <Table className="mt-5">
+      <TableHead>
+        <TableRow>
+          <TableHeaderCell>Name</TableHeaderCell>
+          <TableHeaderCell>Position</TableHeaderCell>
+          <TableHeaderCell>Department</TableHeaderCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {data.map((item) => (
+          <TableRow key={item.name}>
+            <TableCell>{item.name}</TableCell>
+            <TableCell>
+              <Text>{item.Role}</Text>
+            </TableCell>
+            <TableCell>
+              <Text>{item.departement}</Text>
+            </TableCell>
+            <TableCell>
+             
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+      </Card>   
           </Box>
         </Stack>
       </Container>
     </Box>
   </>
 );
+        };
 
 Page.getLayout = (page) => (
   <DashboardLayout>
