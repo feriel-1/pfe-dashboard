@@ -27,15 +27,15 @@ export const items = [
       </SvgIcon>
     )
   },
- // {
-   // title: 'Users',
-   // path: '/Users',
-    //icon: (
-    // <SvgIcon fontSize="small">
-      //  <UsersIcon />
-     // </SvgIcon>
-   // )
-  //},
+  {
+    title: 'Users',
+    path: '/Users',
+    icon: (
+     <SvgIcon fontSize="small">
+        <UsersIcon />
+      </SvgIcon>
+    )
+  },
   {
     title: 'Settings',
     path: '/settings',

@@ -10,12 +10,13 @@ import {
   TextField,
   Unstable_Grid2 as Grid
 } from '@mui/material';
+import { collection } from 'firebase/firestore';
 
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
     firstName: 'Mohamed',
-    lastName: 'Aouichaoui',
+    lastName: 'Aouichaoui', 
     email: 'mohamed.aouichaoui@leoni.com',
     phone: '50510292',
     country: 'LTN3'
@@ -31,18 +32,28 @@ export const AccountProfileDetails = () => {
     []
   );
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-    },
-    []
-  );
+  const handleAdd = async (e) => {
+    e.preventDefault();
+    //try {
+      //const res = await createUserWithEmailAndPassword(
+        /////auth,
+       // data.email,
+        //data.password
+      //);
+     const res = await addDoc(collection(db, "users"), {
+        name:"salah",
+        state:"sallouha",
+        country:"msalha"
+      });
+
+      coonsole.log(res.id)
+  }}
 
   return (
     <form
-      autoComplete="off"
-      noValidate
-      onSubmit={handleSubmit}
+      autoComplete="on"
+      // noValidate
+      onSubmit={handleAdd}
     >
       <Card>
         <CardHeader
@@ -120,11 +131,11 @@ export const AccountProfileDetails = () => {
         </CardContent>
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
-          <Button variant="contained">
+          <Button variant="contained" type='submit'>
             Save details
           </Button>
         </CardActions>
       </Card>
     </form>
   );
-};
+

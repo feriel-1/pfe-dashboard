@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 //import { getAuth } from '../../firebase';
-import { auth } from 'src/firebase/FireBase';
+//import { auth } from 'src/firebase/FireBase';
 import {
   Alert,
   Box,
@@ -22,8 +22,8 @@ import {
 //import { useAuth } from 'src/hooks/use-auth';
 //import { Layout as AuthLayout } from 'src/layouts/auth/layout';
 const initialValues = {
-  email: '',
-  password: ''
+  email: 'mohamed.aouichaoui@leoni.com',
+  password: 'leonileoni'
 };
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -39,12 +39,22 @@ const SignIn = () => {
         console.log(error);
       });
   };
+};
+import { useAuth } from 'src/hooks/use-auth';
+import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+const Page = () => {
+
   const router = useRouter();
 
-  //const auth = useAuth();
+  const auth = useAuth();
   const [method, setMethod] = useState('email');
   const formik = useFormik({
-   initialValues,
+    initialValues: {
+      email: 'mohamed.aouichaoui@leoni.com',
+      password: 'leonileoni'
+    
+    },
+
     validationSchema: Yup.object({
       email: Yup
         .string()
@@ -57,7 +67,7 @@ const SignIn = () => {
         .required('Password is required')
     }),
     onSubmit: async (values, helpers) => {
-      try {
+    try {
         await auth.signIn(values.email, values.password);
         router.push('/');
       } catch (err) {
@@ -65,17 +75,14 @@ const SignIn = () => {
         helpers.setErrors({ submit: err.message });
         helpers.setSubmitting(false);
       }
-    }
+  }
   });
-
   const handleMethodChange = useCallback(
     (event, value) => {
       setMethod(value);
     },
     []
   );
-
-
   return (
     <>
       <Head>
@@ -125,9 +132,12 @@ const SignIn = () => {
               
             </Tabs>
             {method === 'email' && (
+
               <form 
-                noValidate
-                onSubmit={signIn}
+               // noValidate
+               // onSubmit={signIn}
+               // noValidate
+                onSubmit={formik.handleSubmit}
               >
                <Stack spacing={3}>
                   <TextField
@@ -140,7 +150,7 @@ const SignIn = () => {
                     onChange={(e) => {formik.handleChange(e)
                       setEmail(e.target.value)}}
                     type="email"
-                    value={email}
+                    //value={email}
                     
                   />
                   <TextField
@@ -153,7 +163,7 @@ const SignIn = () => {
                     onChange={(e) => {formik.handleChange(e)
                       setPassword(e.target.value)}}
                     type="password"
-                    value={password}
+                  //  value={password}
                 
                   />
                 </Stack>
@@ -173,8 +183,8 @@ const SignIn = () => {
                   sx={{ mt: 3 }}
                   type="submit"
                   variant="contained"
-                  onClick={signIn}
-                >
+                //  onClick={signIn}     
+                 >
                   Continue
                 </Button>
               
@@ -187,6 +197,6 @@ const SignIn = () => {
     </>
   );
 };
+export default Page;
 
 
-export default SignIn;
