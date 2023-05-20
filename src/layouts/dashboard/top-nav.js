@@ -81,7 +81,7 @@ export const TopNav = (props) => {
             spacing={2}
           >
             <Tooltip title="Contacts">
-              <IconButton onClick={onNavOpen}>
+              <IconButton >
                 <SvgIcon fontSize="small">
                   <UsersIcon />
                 </SvgIcon>

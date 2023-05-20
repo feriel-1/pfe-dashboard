@@ -14,7 +14,7 @@ import  TempHistory3 from 'src/components/ServerRoom3/TemperatureHistory3';
 
 import { Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
-import { database } from "src/firebase/FireBase";
+import { database } from "src/firebase";
 import { useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 

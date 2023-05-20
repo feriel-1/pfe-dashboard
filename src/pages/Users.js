@@ -102,7 +102,7 @@ const Page = () => {
             justifyContent="space-between"
             spacing={4}
           >
-            <Stack spacing={2}>
+            <Stack spacing={1}>
               <Typography variant="h4">
                 Users
               </Typography>

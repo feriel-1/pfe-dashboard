@@ -20,6 +20,8 @@ const Page = () => {
 
       //submit: null
     },
+    
+
     validationSchema: Yup.object({
       email: Yup
         .string()
