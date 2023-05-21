@@ -25,5 +25,5 @@ const app = initializeApp(firebaseConfig);
 export const database = getDatabase(app);
 export const auth = getAuth (app);
 export   const db = getFirestore(app);
-ReactDOM.render(<App />, document.getElementById('root'));
+
 
