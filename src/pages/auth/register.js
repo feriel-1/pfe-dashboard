@@ -6,57 +6,64 @@ import * as Yup from 'yup';
 import { Box, Button, color,Link, Stack, TextField, Typography } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+import { positions } from '@mui/system';
 
 const Page = () => {
-  const router = useRouter();
-  const auth = useAuth();
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      name: '',
-      password: '',
-      position: '',
-      department:'',
-
-      //submit: null
-    },
+    const formik = useFormik({
+      initialValues: {
+        email: '',
+        name: '',
+        password: '',
+        position: '',
+        department: ''
+      },
+      validationSchema: Yup.object({
+        email: Yup.string()
+          .email('Must be a valid email')
+          .max(255)
+          .required('Email is required'),
+        name: Yup.string()
+          .max(255)
+          .required('Name is required'),
+        password: Yup.string()
+          .max(255)
+          .required('Password is required'),
+        position: Yup.string()
+          .max(255)
+          .required('Position is required'),
+       // department: Yup.string()
+        //  .max(255)
+        //  .required('Department is required')
+      }),
+      onSubmit: async (values) => {
+        // Handle form submission
+        try {
+          // Create user account with email and password
+          const userCredential = await firebase.auth().createUserWithEmailAndPassword(
+            values.email,
+            values.password
+          );
+          const user = userCredential.user;
     
-    validationSchema: Yup.object({
-      email: Yup
-        .string()
-        .email('Must be a valid email')
-        .max(255)
-        .required('Email is required'),
-      name: Yup
-        .string()
-        .max(255)
-        .required('Name is required'),
-      password: Yup
-        .string()
-        .max(255)
-        .required('Password is required'),
-       position: Yup
-        .string()
-        .max(255)
-        .required('position is required') ,
-        department: Yup
-        .string()
-        .max(255)
-        .required('department is required')
-    }),
-    onSubmit: async (values, helpers) => {
-      try {
-        await auth.signUp(values.email, values.name, values.password , values.department , values.position);
-        router.push('/');
-      } catch (err) {
-        helpers.setStatus({ success: false });
-        helpers.setErrors({ submit: err.message });
-        helpers.setSubmitting(false);
+          // Update user profile with name, position, and department
+          await user.updateProfile({
+            displayName: values.name,
+            displayPosition: values.position,
+            displayDepartment: values.department
+          });
+    
+          // Clear form inputs
+          formik.resetForm();
+    
+          // Handle successful signup or redirect to another page
+          // ...
+        } catch (error) {
+          // Handle signup error
+          console.error('Error signing up:', error);
+        }
       }
-    }
-  });
-
-  return (
+    });
+   return (
     <>
       <Head>
         <title>
@@ -89,7 +96,7 @@ const Page = () => {
               </Typography>
             </Stack>
             <form
-              noValidate
+             // noValidate
               onSubmit={formik.handleSubmit}
             >
               <Stack spacing={3}>
@@ -161,6 +168,7 @@ const Page = () => {
                 sx={{ mt: 3, backgroundColor:"blue" }}
                 type="submit"
                 variant="contained"
+                
               >
                 Continue
               </Button>

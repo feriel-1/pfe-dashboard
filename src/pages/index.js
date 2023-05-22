@@ -13,7 +13,7 @@ import { HumidityHistory } from "src/components/ServerRoom1/HumidityHistory";
 import { GazHistory } from "src/components/ServerRoom1/GazHistory";
 import { TempHumidityHistory } from "src/components/ServerRoom1/TempHumidityHistory";
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
-import { database } from "src/firebase";
+import { database } from "src/components/Firebase/firebase";
 import { useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 

@@ -12,7 +12,7 @@ import TempHistory2  from "src/components/ServerRoom2/TempHistory2";
 
 import { Grid } from "@tremor/react";
 import { Typography } from "@mui/material";
-import { database } from "src/firebase";
+import { database } from "src/components/Firebase/firebase";
 import { useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 

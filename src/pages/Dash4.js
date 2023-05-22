@@ -15,7 +15,7 @@ import { TempHistory4 } from 'src/components/ServerRoom4/TemperatureHistory4';
 
 import { Card, Title, Text, Tab, TabList, Grid } from "@tremor/react";
 import {Typography} from '@mui/material';
-import { database } from "src/firebase";
+import { database } from "src/components/Firebase/firebase";
 import { useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 const now = new Date();
