@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id     String  @id @default(cuid())
+  email  String  @unique
+  name   String?
+  salles Salle[]
+}
+
+model Salle {
+  id       String    @id @default(cuid())
+  userId   String?
+  User     User?     @relation(fields: [userId], references: [id])
+  capteurs Capteur[]
+}
+
+model Capteur {
+  id         String       @id @default(cuid())
+  salleId    String?
+  Type       String
+  Salle      Salle?       @relation(fields: [salleId], references: [id])
+  Historique Historique[]
+}
+
+model Historique {
+  id        String   @id @default(cuid())
+  capteurId String?
+  value     String
+  Capteur   Capteur? @relation(fields: [capteurId], references: [id])
+}
