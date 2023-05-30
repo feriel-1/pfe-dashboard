@@ -46,7 +46,7 @@ export const AccountProfileDetails = () => {
         country:"msalha"
       });
 
-      coonsole.log(res.id)
+      console.log(res.id)
   }}
 
   return (
